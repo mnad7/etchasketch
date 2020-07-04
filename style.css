@@ -1,0 +1,53 @@
+#container {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#title {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    margin: auto auto;
+}
+
+#grid-container {
+    height: 600px;
+    width: 600px;
+    border-color: skyblue;
+    border-width: 4px;
+    border-style: solid;
+    margin: auto auto;
+}
+
+.square {
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    margin: 0 0;
+}
+
+.filled {
+    background-color: black;
+}
+
+.butt {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px 10px;
+    border-style: none;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 4px 4px;
+    display: block;
+    text-align: center;
+}
+
+.butt:hover {
+    background-color: red;
+    color: black;
+}
