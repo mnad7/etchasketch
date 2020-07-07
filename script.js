@@ -2,22 +2,16 @@ let sideLength = 16;
 const gridContainer = document.querySelector('#grid-container');
 
 function generateGrid() {
-    for(let i = 0; i < sideLength; i++)
+    for(let i = 0; i < sideLength * sideLength; i++)
     {
-        const rowDiv = document.createElement('div'); 
-        gridContainer.appendChild(rowDiv) 
-        for(let j = 0; j < sideLength; j++)
-        {
-            const square = document.createElement('button');
-            square.classList.add('square');
-            square.style.height = 600 / sideLength + "px";
-            square.style.width = 600 / sideLength + "px";
-            square.addEventListener('mouseover', () => {
-                square.classList.add('filled');
-            });
-            rowDiv.appendChild(square);
-        }
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.addEventListener('mouseover', () => {
+            square.classList.add('filled');
+        });
+        gridContainer.appendChild(square);
     }
+    gridContainer.style.gridTemplateColumns = "repeat(" + sideLength + ", 1fr)";
 }
 
 generateGrid();
@@ -33,10 +27,10 @@ btnReset.addEventListener('click', () => {
 
 const btnChange = document.querySelector('#change-size');
 btnChange.addEventListener('click', () => {
-    let size = "bruh";
+    let size = "E";
     while(isNaN(size))
     {
-        size = prompt("Enter side length. Anything over 20 starts breaking i don't know why I'll fix it later Kapp");
+        size = prompt("Enter side length.");
     }
     sideLength = size;
     const squares = document.querySelectorAll('.square');
